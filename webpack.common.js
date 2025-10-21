@@ -8,21 +8,16 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            minify: {
+                removeRedundantAttributes: false,
+            },
         }),
     ],
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: [
-                  "style-loader",
-                  {
-                    loader: "css-loader",
-                    options: {
-                      url: true, 
-                    },
-                  },
-                ],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
