@@ -1,0 +1,1 @@
+This is the fifth project of Javascript curriculum through The Odin Project, a Weather App, where the knowledge of API's, Promises, async and await was applied.
