@@ -83,8 +83,15 @@ import { displayCountry } from './dom.js';
             flag ? flag = false : flag = true;
             flag ? scale.textContent = '°C' : scale.textContent = '°F';
             currentCountry.changeScale();
-            weatherDiv.textContent = '';
-            await displayCountry(currentCountry, weatherDiv, loadImages, formatDates);   
+            const tempText = document.querySelector('.temp-text');
+            tempText.textContent = currentCountry.temp;
+            const feelText = document.querySelector('[data-key="feeltempF"]'); 
+            feelText.textContent = currentCountry.feeltemp;
+            const daysText = document.querySelectorAll('.day-temp');
+            daysText.forEach((d, index) => {
+                d.textContent = currentCountry.daytemp[index + 1];
+            });
+            
         }
     });
 

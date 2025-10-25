@@ -100,6 +100,7 @@ export async function displayCountry(obj, container, loadImages, formatDates){
 
             const value =  document.createElement('div');
             value.classList = 'card-value';
+            value.dataset.key = key;
             key === 'feeltempF' ? value.textContent = obj.feeltemp : value.textContent = obj[key];
             card.appendChild(value);
         }
